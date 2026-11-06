@@ -82,6 +82,16 @@ html{scroll-behavior:smooth}
 .assembly-section .closing-line[data-assemble]{--ay:35px;--as:.96}
 @media(max-width:700px){[data-assemble]{--ay:28px}.assembly-section .about-heading[data-assemble],.assembly-section .contact-heading[data-assemble]{--ax:-24px}.assembly-section .about-copy[data-assemble],.assembly-section .contact-copy[data-assemble]{--ax:24px}.assembly-section .skill-item:nth-child(odd)[data-assemble],.assembly-section .resume-card:nth-child(odd)[data-assemble]{--ax:-18px}.assembly-section .skill-item:nth-child(even)[data-assemble],.assembly-section .resume-card:nth-child(even)[data-assemble]{--ax:18px}}
 @media(prefers-reduced-motion:reduce){[data-assemble]{opacity:1!important;transform:none!important;will-change:auto!important}.assembly-section:before{display:none}}
+
+/* Scroll-scrubbed 3D reconstruction */
+.assembly-section{perspective:1400px;perspective-origin:50% 45%;transform-style:preserve-3d}
+.assembly-section [data-assemble]{transform-style:preserve-3d;backface-visibility:hidden;will-change:transform,opacity}
+.project{transform-style:preserve-3d;perspective:1100px}
+.project-art,.project-info{transform-style:preserve-3d;backface-visibility:hidden}
+.assembly-section .assembled{will-change:auto}
+@media(max-width:640px){.assembly-section{perspective:900px}.assembly-section [data-assemble]{backface-visibility:visible}}
+@media(prefers-reduced-motion:reduce){.assembly-section [data-assemble]{opacity:1!important;transform:none!important;will-change:auto}}
+
 </style>
   <script>document.documentElement.classList.add('js');</script>
 </head>
@@ -148,42 +158,70 @@ html{scroll-behavior:smooth}
       <article class="resume-card reveal"><div class="resume-card-top mono"><span>CV / 04</span><span>PDF · 1 PAGE</span></div><div class="resume-icon">⟡</div><h3>Bioinformatics Analyst</h3><p>Protein sequences · NGS · Computational biology</p><a href="assets/resumes/Kathir_V_Bioinformatics_Resume.pdf" download class="download-link">Download resume <span>↓</span></a></article>
     </div><p class="resume-foot mono">MORE ROLE-SPECIFIC VERSIONS CAN BE ADDED TO THIS LIBRARY.</p></div></section>
 
-    <section class="contact section-shell section-pad" id="contact" data-scene="Contact section loaded"><div class="section-index mono reveal"><span>05 / CONTACT</span><span>THE NEXT CHAPTER</span></div><div class="contact-layout"><div class="contact-heading reveal"><p class="eyebrow">OPEN TO THE RIGHT OPPORTUNITY</p><h2>Let's make<br>something <em>useful.</em></h2></div><div class="contact-copy reveal"><p>I'm interested in fresher roles and internships across machine learning, data science, data analytics and bioinformatics — especially where data can help solve real problems.</p><a class="button button-bright" href="mailto:kathir4605@gmail.com">Start a conversation <span>↗</span></a><div class="social-links"><a href="mailto:kathir4605@gmail.com">EMAIL ↗</a><a href="https://www.linkedin.com/in/kathir-v" target="_blank" rel="noopener noreferrer">LINKEDIN ↗</a><a href="https://github.com/Kathir1730" target="_blank" rel="noopener noreferrer">GITHUB ↗</a></div></div></div><div class="closing-line"><span class="mono">BIOLOGY × DATA × POSSIBILITY</span><span class="closing-mark">K<span>·</span></span></div></section>
-  </main>
-  <footer class="site-footer mono"><span>© <span id="year">2026</span> KATHIR V.</span><span>MADE WITH CURIOSITY & CARE</span><a href="#home">BACK TO TOP ↑</a></footer>
-
-  
-<script>
+    <section class="contact section-shell section-pad" id="contact" data-scene="Contact section loaded"><div class="section-index mono reveal"><span>05 / CONTACT</span><span>THE NEXT CHAPTER</span></div><div class="contact-layout"><div class="contact-heading reveal"><p class="eyebrow">OPEN TO THE RIGHT OPPORTUNITY</p><h2>Let's make<br>something <em>useful.</em></h2></div><div class="contact-copy reveal"><p>I'm interested in fresher roles and internships across machine learning, data science, data analytics and bioinformatics — especially where data can help solve real problems.</p><a class="button button<script>
 (()=> {
  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
- const targets=[...document.querySelectorAll('#about,#work,#toolkit,#resumes,#contact')];
- targets.forEach(section=>{
+ const sections=[...document.querySelectorAll('#about,#work,#toolkit,#resumes,#contact')];
+ const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+ sections.forEach((section,si)=>{
    section.classList.add('assembly-section');
    const nodes=[...section.querySelectorAll('.section-index,.about-heading,.about-copy,.work-heading,.project,.toolkit-heading,.skill-item,.resume-heading,.resume-card,.contact-heading,.contact-copy,.closing-line')];
    nodes.forEach((node,index)=>{
-     if(node.matches('.project')) {
-       [...node.children].forEach((child,j)=>{child.dataset.assemble='';child.style.setProperty('--delay',(j*75)+'ms');});
-     } else {node.dataset.assemble='';node.style.setProperty('--delay',(Math.min(index,8)*65)+'ms');}
+     const fragments=node.matches('.project')?[...node.children]:[node];
+     fragments.forEach((el,j)=>{
+       el.dataset.assemble='';
+       el.style.setProperty('--assembly-order',String(index+j*.65));
+       const side=(index+j+si)%2===0?-1:1;
+       const x=node.matches('.project')?(j===0?-95:95):side*54;
+       const y=node.matches('.project')?28+(j*12):38+(index%3)*13;
+       const rx=node.matches('.project')?(j===0?12:-10):side*10;
+       const ry=node.matches('.project')?(j===0?-17:17):side*13;
+       const rz=side*(4+(index%3)*2);
+       el.style.setProperty('--assembly-x',x+'px');
+       el.style.setProperty('--assembly-y',y+'px');
+       el.style.setProperty('--assembly-rx',rx+'deg');
+       el.style.setProperty('--assembly-ry',ry+'deg');
+       el.style.setProperty('--assembly-rz',rz+'deg');
+     });
    });
  });
- if(reduced)return;
+ if(reduced){
+   document.querySelectorAll('[data-assemble]').forEach(el=>{el.style.opacity='1';el.style.transform='none';});
+   return;
+ }
  let ticking=false;
- const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
  const update=()=>{
    const vh=innerHeight;
-   targets.forEach(section=>{
+   sections.forEach(section=>{
      const rect=section.getBoundingClientRect();
-     const start=vh*.88,end=-rect.height*.18;
-     const p=clamp((start-rect.top)/(start-end),0,1);
-     section.style.setProperty('--section-glow',String(Math.sin(p*Math.PI)));
-     section.querySelectorAll('[data-assemble]').forEach((el)=>{
-       const delay=parseFloat(el.style.getPropertyValue('--delay')||0)/1000;
-       const local=clamp((p-delay*.18)/.72,0,1);
+     const start=vh*.92,end=-rect.height*.12;
+     const progress=clamp((start-rect.top)/(start-end),0,1);
+     section.style.setProperty('--section-glow',String(Math.sin(progress*Math.PI)));
+     section.querySelectorAll('[data-assemble]').forEach(el=>{
+       const order=parseFloat(el.style.getPropertyValue('--assembly-order'))||0;
+       const stagger=Math.min(order*.035,.25);
+       const local=clamp((progress-stagger)/.72,0,1);
        const eased=1-Math.pow(1-local,3);
-       const cs=getComputedStyle(el);
-       const x=cs.getPropertyValue('--ax').trim()||'0px';
-       const y=cs.getPropertyValue('--ay').trim()||'42px';
-       const rot=cs.getPropertyValue('--ar').trim()||'0deg';
+       const x=parseFloat(el.style.getPropertyValue('--assembly-x'))||0;
+       const y=parseFloat(el.style.getPropertyValue('--assembly-y'))||0;
+       const rx=parseFloat(el.style.getPropertyValue('--assembly-rx'))||0;
+       const ry=parseFloat(el.style.getPropertyValue('--assembly-ry'))||0;
+       const rz=parseFloat(el.style.getPropertyValue('--assembly-rz'))||0;
+       const depth=260*(1-eased);
+       const scale=.88+.12*eased;
+       el.style.opacity=String(eased);
+       el.style.transform='translate3d('+(x*(1-eased))+'px,'+(y*(1-eased))+'px,'+(-depth)+'px) rotateX('+(rx*(1-eased))+'deg) rotateY('+(ry*(1-eased))+'deg) rotateZ('+(rz*(1-eased))+'deg) scale('+scale+')';
+       if(local>=1)el.classList.add('assembled');else el.classList.remove('assembled');
+     });
+   });
+   ticking=false;
+ };
+ const requestUpdate=()=>{if(!ticking){requestAnimationFrame(update);ticking=true;}};
+ addEventListener('scroll',requestUpdate,{passive:true});
+ addEventListener('resize',requestUpdate);
+ update();
+})();
+</script>('--ar').trim()||'0deg';
        const scale=cs.getPropertyValue('--as').trim()||'.94';
        const num=(v)=>parseFloat(v)||0;
        const unit=(v,f)=>v.endsWith('deg')?'deg':f;
