@@ -56,10 +56,15 @@
  .hero-footer{padding-top:30px}
 }
 
+
+.hero-portrait{right:1%;top:9%;width:43%;height:83%;max-height:720px;min-height:0;z-index:1;pointer-events:none}.portrait-halo{inset:5% -4%;background:radial-gradient(ellipse,#78966a55,transparent 72%);filter:blur(42px)}.portrait-frame{inset:0;border:0;background:transparent;clip-path:none;overflow:visible}.portrait-frame:after{inset:0;background:linear-gradient(90deg,#0b100e,transparent 28%,transparent 72%,#0b100e),linear-gradient(0deg,#0b100e,transparent 24%,transparent 82%,#0b100e)}.portrait-frame img{object-fit:contain;object-position:center bottom;filter:saturate(.72) contrast(1.06) brightness(.9);mix-blend-mode:screen;mask-image:radial-gradient(ellipse 68% 78% at 52% 47%,#000 42%,#000e 59%,#0006 76%,transparent)}.portrait-tag,.orbit{display:none}.hero-copy{width:83%;z-index:3}.hero-title{max-width:1080px;text-shadow:0 3px 34px #0b100e55}
+@media(max-width:900px){.hero-copy{width:92%}.hero-portrait{right:-3%;top:15%;width:49%;height:75%;opacity:.72}}@media(max-width:640px){.hero-portrait{top:17%;right:-12%;width:75%;height:59%;opacity:.42}.hero-copy{width:100%}}
+.build-sequence{position:fixed;inset:0;z-index:120;background:#0b100e;color:var(--ink);display:flex;flex-direction:column;padding:clamp(18px,4vw,54px);transition:opacity 1s,visibility 1s;overflow:hidden}.build-sequence.is-done{opacity:0;visibility:hidden;pointer-events:none}.build-top,.build-status{display:flex;justify-content:space-between;gap:18px;font:9px var(--mono);letter-spacing:.12em;color:#94a18f;position:relative;z-index:4}.build-live{color:var(--green)}.build-live i{display:inline-block;width:6px;height:6px;background:var(--green);border-radius:50%;margin-right:8px;box-shadow:0 0 12px var(--green);animation:blink 1s infinite alternate}.build-stage{position:relative;flex:1;display:grid;place-items:center;min-height:0}.build-grid{position:absolute;inset:3% 0;background-image:linear-gradient(#ffffff0b 1px,transparent 1px),linear-gradient(90deg,#ffffff0b 1px,transparent 1px);background-size:46px 46px;mask-image:radial-gradient(ellipse,#000 20%,transparent 76%)}.build-wordmark{position:absolute;top:8%;left:2%;font:600 clamp(30px,5vw,64px) var(--display);color:var(--green)}.build-wordmark span{color:var(--coral)}.build-heading{position:absolute;left:8%;top:25%;z-index:3}.build-kicker{display:block;color:var(--green);font:9px var(--mono);letter-spacing:.17em;margin-bottom:18px}.build-heading strong{display:block;font:700 clamp(42px,8vw,104px)/.88 var(--display);letter-spacing:-.08em}.build-heading em{font-style:normal;color:var(--green)}.build-blueprint{position:absolute;width:min(55vw,690px);height:min(55vh,440px);right:5%;top:15%;border:1px solid #8eae7a55;background:linear-gradient(145deg,#17231a88,#0d151088);box-shadow:0 0 100px #8aaa7812;transform:perspective(900px) rotateY(-12deg) rotateX(4deg);animation:blueprintIn 1.2s both}.bp-nav{height:15%;border-bottom:1px solid #b7e28d44;display:flex;align-items:center;gap:5%;padding:0 5%}.bp-nav b{width:24px;height:24px;border:1px solid var(--green);border-radius:50%;margin-right:auto}.bp-nav i{width:10%;height:3px;background:#b7e28d44}.bp-hero{height:48%;padding:7%;display:flex;flex-direction:column;justify-content:center;gap:12px;border-bottom:1px solid #b7e28d33}.bp-hero i{height:10px;width:30%;background:#b7e28d55}.bp-hero i:first-child{width:55%;height:18px}.bp-hero b{height:5px;width:22%;background:var(--coral);margin-top:12px}.bp-cards{height:25%;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:3% 5%}.bp-cards i{border:1px solid #b7e28d44;background:linear-gradient(135deg,#b7e28d14,transparent)}.bp-foot{height:12%;border-top:1px solid #b7e28d22;margin:0 5%}.builder{position:absolute;width:42px;height:54px;z-index:5;animation:botBuild 3.8s ease-in-out infinite;filter:drop-shadow(0 5px 12px #0009)}.bot-body{position:absolute;left:7px;top:10px;width:28px;height:25px;border:1px solid var(--green);border-radius:8px;background:#1a2a1e;display:flex;align-items:center;justify-content:center;gap:6px;box-shadow:0 0 18px #b7e28d22}.bot-body:before{content:"";position:absolute;top:-7px;left:13px;width:1px;height:7px;background:var(--green)}.bot-body:after{content:"";position:absolute;top:-10px;left:11px;width:5px;height:5px;border-radius:50%;background:var(--coral);box-shadow:0 0 8px var(--coral)}.bot-body i{width:4px;height:4px;border-radius:50%;background:var(--green)}.bot-pack{position:absolute;left:28px;top:1px;width:19px;height:13px;border:1px solid #f07d65;background:#f07d6522;transform:rotate(-18deg)}.builder-one{left:22%;top:64%}.builder-two{left:65%;top:68%;animation-delay:-.9s}.builder-three{left:76%;top:27%;animation-delay:-1.8s}.builder-four{left:45%;top:80%;animation-delay:-2.7s}.build-spark{position:absolute;color:var(--green);font-size:22px;animation:spark 1.7s infinite}.spark-one{left:46%;top:22%}.spark-two{right:14%;bottom:17%;animation-delay:-.7s}.spark-three{left:15%;bottom:23%;color:var(--coral);animation-delay:-1.2s}.build-bottom{position:relative;z-index:4}.build-progress{height:2px;background:#ffffff18;margin-bottom:13px}.build-progress span{display:block;width:8%;height:100%;background:var(--green);box-shadow:0 0 12px var(--green);transition:width .2s}.build-status{font-size:8px}.build-skip{position:absolute;right:0;bottom:0;background:transparent;border:0;color:#d5dfd1;font:9px var(--mono);cursor:pointer;padding:0 0 24px}@keyframes blueprintIn{from{opacity:0;translate:0 35px}to{opacity:1;translate:0 0}}@keyframes botBuild{0%,100%{translate:0 0;rotate:-5deg}25%{translate:35px -22px;rotate:5deg}55%{translate:65px -5px;rotate:-3deg}78%{translate:18px -32px;rotate:6deg}}@keyframes spark{0%,100%{opacity:0;scale:.5}45%{opacity:1;scale:1.15}}@keyframes blink{to{opacity:.35}}@media(max-width:700px){.build-sequence{padding:18px}.build-top{font-size:7px}.build-heading{left:3%;top:19%}.build-heading strong{font-size:clamp(42px,12vw,68px)}.build-blueprint{width:86vw;height:39vh;right:-6%;top:39%;opacity:.8}.builder-one{left:10%;top:61%}.builder-two{left:70%;top:72%}.builder-three{left:79%;top:40%}.builder-four{left:42%;top:84%}.build-wordmark{top:5%}}@media(prefers-reduced-motion:reduce){.builder,.build-spark,.build-live i,.build-blueprint{animation:none}}
 </style>
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
+<div class="build-sequence" id="build-sequence" aria-label="A team of tiny AI builders is assembling this portfolio"><div class="build-top mono"><span>KATHIR V. / PORTFOLIO SYSTEM</span><span class="build-live"><i></i> BUILD IN PROGRESS</span></div><div class="build-stage"><div class="build-grid"></div><div class="build-wordmark mono">K<span>·</span>V</div><div class="build-heading"><span class="build-kicker">INITIALIZING CREATIVE SYSTEM</span><strong>BUILDING<br><em>THE INTERFACE.</em></strong></div><div class="build-blueprint"><div class="bp-nav"><b></b><i></i><i></i><i></i></div><div class="bp-hero"><i></i><i></i><b></b></div><div class="bp-cards"><i></i><i></i><i></i></div><div class="bp-foot"></div></div><div class="builder builder-one"><span class="bot-body"><i></i><i></i></span><b class="bot-pack"></b></div><div class="builder builder-two"><span class="bot-body"><i></i><i></i></span><b class="bot-pack"></b></div><div class="builder builder-three"><span class="bot-body"><i></i><i></i></span><b class="bot-pack"></b></div><div class="builder builder-four"><span class="bot-body"><i></i><i></i></span><b class="bot-pack"></b></div><div class="build-spark spark-one">✳</div><div class="build-spark spark-two">✳</div><div class="build-spark spark-three">+</div></div><div class="build-bottom"><div class="build-progress"><span id="build-progress-bar"></span></div><div class="build-status mono"><span id="build-status-text">LAYING OUT THE GRID</span><span id="build-percent">08%</span></div><button class="build-skip mono" id="build-skip" type="button">SKIP INTRO ↗</button></div></div>
   <a class="skip" href="#main">Skip to content</a>
   <div class="scroll-progress" aria-hidden="true"><span></span></div>
   <header class="site-header">
@@ -125,98 +130,6 @@
   </main>
   <footer class="site-footer mono"><span>© <span id="year">2026</span> KATHIR V.</span><span>MADE WITH CURIOSITY & CARE</span><a href="#home">BACK TO TOP ↑</a></footer>
 
-  <aside class="agent-widget" aria-label="Portfolio guide"><button class="agent-toggle" aria-expanded="false" aria-controls="agent-panel" aria-label="Open portfolio guide"><span class="agent-face"><i></i><i></i></span><span class="agent-pulse"></span></button><div class="agent-panel" id="agent-panel" hidden><div class="agent-panel-head"><span class="agent-dot"></span><span class="mono">FIELD NOTES / GUIDE</span><button class="agent-close" aria-label="Close guide">×</button></div><p class="agent-message">Hi, I'm a tiny guide for this portfolio. Scroll through the sections and I'll point out what's here.</p><p class="agent-status mono" aria-live="polite">STATUS · READY</p></div></aside>
-  <script>
-(() => {
-  const nav = document.querySelector('#site-nav');
-  const menu = document.querySelector('.menu-toggle');
-  const progress = document.querySelector('.scroll-progress span');
-  const agentToggle = document.querySelector('.agent-toggle');
-  const agentPanel = document.querySelector('#agent-panel');
-  const agentClose = document.querySelector('.agent-close');
-  const agentMessage = document.querySelector('.agent-message');
-  const agentStatus = document.querySelector('.agent-status');
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  document.querySelector('#year').textContent = new Date().getFullYear();
-  menu?.addEventListener('click', () => {
-    const open = menu.getAttribute('aria-expanded') === 'true';
-    menu.setAttribute('aria-expanded', String(!open));
-    menu.setAttribute('aria-label', open ? 'Open navigation' : 'Close navigation');
-    nav.classList.toggle('open', !open);
-  });
-  nav?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-    nav.classList.remove('open');
-    menu?.setAttribute('aria-expanded', 'false');
-    menu?.setAttribute('aria-label', 'Open navigation');
-  }));
-
-  const revealItems = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window && !reduceMotion) {
-    const revealObserver = new IntersectionObserver(entries => entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        revealObserver.unobserve(entry.target);
-      }
-    }), { threshold: 0.12, rootMargin: '0px 0px -35px 0px' });
-    revealItems.forEach(item => revealObserver.observe(item));
-  } else revealItems.forEach(item => item.classList.add('is-visible'));
-
-  const scenes = [...document.querySelectorAll('[data-scene]')];
-  if ('IntersectionObserver' in window) {
-    const sceneObserver = new IntersectionObserver(entries => entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const scene = entry.target.dataset.scene;
-        agentStatus.textContent = `STATUS · ${scene.toUpperCase()}`;
-        agentMessage.textContent = scene === 'Opening scene'
-          ? 'Welcome. This is Kathir’s portfolio — explore the projects, tools and role-specific resumes.'
-          : `${scene}. Take a look around; each project has its own story and visual language.`;
-      }
-    }), { threshold: 0.32 });
-    scenes.forEach(scene => sceneObserver.observe(scene));
-  }
-
-  const updateProgress = () => {
-    const max = document.documentElement.scrollHeight - window.innerHeight;
-    const value = max > 0 ? (window.scrollY / max) * 100 : 0;
-    progress.style.width = `${Math.min(100, Math.max(0, value))}%`;
-  };
-  window.addEventListener('scroll', updateProgress, { passive: true });
-  updateProgress();
-
-  const bot = document.querySelector('.agent-widget');
-  if (bot && !reduceMotion && window.matchMedia('(pointer:fine)').matches) {
-    let targetX = 0, targetY = 0, currentX = 0, currentY = 0, frame = 0;
-    window.addEventListener('pointermove', event => {
-      const nx = (event.clientX / window.innerWidth - .5);
-      const ny = (event.clientY / window.innerHeight - .5);
-      targetX = Math.max(-1, Math.min(1, nx)) * 7;
-      targetY = Math.max(-1, Math.min(1, ny)) * 5;
-      if (!frame) frame = requestAnimationFrame(function drift() {
-        currentX += (targetX-currentX)*.08;
-        currentY += (targetY-currentY)*.08;
-        bot.style.setProperty('--guide-x', currentX+'px');
-        bot.style.setProperty('--guide-y', currentY+'px');
-        bot.style.transform = 'translate3d(var(--guide-x),var(--guide-y),0)';
-        if (Math.abs(targetX-currentX)>.05 || Math.abs(targetY-currentY)>.05) frame=requestAnimationFrame(drift);
-        else frame=0;
-      });
-    }, {passive:true});
-  }
-
-  const closeAgent = () => {
-    agentPanel.hidden = true;
-    agentToggle.setAttribute('aria-expanded', 'false');
-  };
-  agentToggle.addEventListener('click', () => {
-    const open = agentToggle.getAttribute('aria-expanded') === 'true';
-    agentToggle.setAttribute('aria-expanded', String(!open));
-    agentPanel.hidden = open;
-  });
-  agentClose.addEventListener('click', closeAgent);
-  document.addEventListener('keydown', event => { if (event.key === 'Escape') closeAgent(); });
-})();
-
-</script>
+  <script>(()=>{const nav=document.querySelector('#site-nav'),menu=document.querySelector('.menu-toggle'),progress=document.querySelector('.scroll-progress span'),reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;document.querySelector('#year').textContent=new Date().getFullYear();menu?.addEventListener('click',()=>{const o=menu.getAttribute('aria-expanded')==='true';menu.setAttribute('aria-expanded',String(!o));menu.setAttribute('aria-label',o?'Open navigation':'Close navigation');nav.classList.toggle('open',!o)});nav?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu?.setAttribute('aria-expanded','false')}));const items=document.querySelectorAll('.reveal');if('IntersectionObserver'in window&&!reduced){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -35px 0px'});items.forEach(x=>io.observe(x))}else items.forEach(x=>x.classList.add('is-visible'));const upd=()=>{const m=document.documentElement.scrollHeight-innerHeight;progress.style.width=(m>0?Math.min(100,scrollY/m*100):0)+'%'};addEventListener('scroll',upd,{passive:true});upd();const b=document.querySelector('#build-sequence'),bar=document.querySelector('#build-progress-bar'),pctEl=document.querySelector('#build-percent'),status=document.querySelector('#build-status-text'),skip=document.querySelector('#build-skip'),steps=[[8,'LAYING OUT THE GRID'],[24,'ASSEMBLING THE NAVIGATION'],[43,'BUILDERS PLACING THE HERO'],[61,'CONNECTING PROJECT MODULES'],[79,'TUNING TYPOGRAPHY & SPACING'],[94,'POLISHING THE FINAL DETAILS'],[100,'PORTFOLIO READY']];let timer=0,start=performance.now();const finish=()=>{if(!b||b.classList.contains('is-done'))return;clearInterval(timer);bar.style.width='100%';pctEl.textContent='100%';status.textContent='PORTFOLIO READY';b.classList.add('is-done');setTimeout(()=>b.remove(),1100)};if(b&&!reduced){let s=0;timer=setInterval(()=>{const p=Math.min(100,8+(performance.now()-start)/78);while(s<steps.length-1&&p>=steps[s+1][0])s++;bar.style.width=p+'%';pctEl.textContent=String(Math.round(p)).padStart(2,'0')+'%';status.textContent=steps[s][1];if(p>=100)finish()},70);skip?.addEventListener('click',finish)}else b?.remove()})();</script>
 </body>
 </html>
