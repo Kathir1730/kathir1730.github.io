@@ -1,18 +1,21 @@
 # Biology to Beyond — Kathir V.
 
-Responsive, mobile-first portfolio website for GitHub Pages.
+Static portfolio for GitHub Pages: `index.html` plus assets. No build step, no dependencies.
 
 ## Publish
-This is a personal GitHub Pages repository. Go to **Settings → Pages**, select **Deploy from a branch**, choose `main` and `/(root)`, and save.
+Settings → Pages → Deploy from a branch → `main` and `/(root)`.
 
-## Required assets
-The HTML expects these files:
-- `assets/kathir-portrait.jpg` — your portrait photo
-- `assets/Kathir_V_Resume.pdf` — your resume PDF
+## Structure
+- `index.html` — page, styles and scripts (inline)
+- `kathir-portrait.jpg` — hero portrait
+- `assets/resumes/` — one PDF per target role
 
-The website's HTML has been added. Upload the two binary files above into an `assets` folder at the repository root so the portrait and resume links work. They are not text files, so they cannot be added through the text-file operation used for the homepage.
+## Resumes
+Four one-page PDFs in `assets/resumes/`: ML Engineer, Data Scientist, Data Analyst, Bioinformatics Analyst.
 
-## Notes
-- Project links are included only where known: Safe Breath on Google Play and your GitHub profile.
-- No repository links have been invented for individual projects.
-- Includes responsive layout, keyboard focus styles, skip link, accessible mobile navigation and reduced-motion handling.
+To add a role, drop a PDF into `assets/resumes/` and add one `<li class="role-row" data-build>` to the `#resumes` list.
+
+## Scroll build effect
+Blocks marked `data-build` are placed one at a time as they scroll into view, with two labelled cursors,
+a selection box and a short build log. It is one-shot (no scroll-scrubbing), uses only transform and
+opacity, and is switched off entirely under `prefers-reduced-motion`.
